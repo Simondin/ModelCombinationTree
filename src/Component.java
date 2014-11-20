@@ -102,9 +102,9 @@ public class Component {
 	}
 	
 	/**
-	 * Method that search and retrive 
-	 * @param child
-	 * @return
+	 * Method that search and retrieve the child passed as attribute
+	 * @param Component child
+	 * @return Component
 	 */
 	public Component getChild(Component child){
 		for(Component c: this.getChildren())
@@ -113,6 +113,11 @@ public class Component {
 		return null;
 	}
 
+	/**
+	 * Method that search if the child is in the list of the children
+	 * @param Component child
+	 * @return boolean
+	 */
 	public boolean searchChild(Component child){
 		boolean found = false;
 		for(Component c: this.getChildren()){
@@ -122,8 +127,25 @@ public class Component {
 		return found;
 	}
 	
+	/**
+	 * Override of the "equals" method, it checks the ID of two components
+	 * @param Component c
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object c){
 		return this.getID() == ((Component) c).getID();
+	}
+	
+	/**
+	 * Override of the "toString" method, it prints the ID of the component and its modes
+	 * @return String
+	 */
+	@Override
+	public String toString(){
+		String print = "Component ID: " + this.getID();
+		for(Mode m: this.getModes())
+			print += m.toString();
+		return print;
 	}
 }

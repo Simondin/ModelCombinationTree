@@ -81,4 +81,25 @@ public class Mode {
 			this.ID = Mode.classID + 1;
 	}
 	
+	/**
+	 * Override of the "equals" method, it checks the ID of two modes
+	 * @param Component c
+	 * @return boolean
+	 */
+	@Override
+	public boolean equals(Object c){
+		return this.getID() == ((Mode) c).getID();
+	}
+	
+	/**
+	 * Override of the "toString" method, it prints the ID of the mode and its mode value
+	 * @return String
+	 */
+	@Override
+	public String toString(){
+		String print = "Component ID: " + this.getID();
+		print += "Mode: " + this.getModeValue();
+		return print;
+	}
+	
 }
