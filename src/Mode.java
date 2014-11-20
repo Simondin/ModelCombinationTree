@@ -97,9 +97,7 @@ public class Mode {
 	 */
 	@Override
 	public String toString(){
-		String print = "Component ID: " + this.getID();
-		print += "Mode: " + this.getModeValue();
-		return print;
+		return "\nMode ID: " + this.getID() + "\nMode Value: " + this.getModeValue();
 	}
 	
 }
