@@ -29,11 +29,8 @@ import java.util.HashMap;
 public class Tree<T> {
 
 	private T head;
-
 	private ArrayList<Tree<T>> leafs = new ArrayList<Tree<T>>();
-
 	private Tree<T> parent = null;
-
 	private HashMap<T, Tree<T>> locate = new HashMap<T, Tree<T>>();
 
 	public Tree(T head) {
