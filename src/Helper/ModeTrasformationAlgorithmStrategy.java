@@ -1,5 +1,5 @@
 package Helper;
 
-public class ModeTrasformationAlgorithmStrategy {
-
+public interface ModeTrasformationAlgorithmStrategy {
+	public void execute();
 }
