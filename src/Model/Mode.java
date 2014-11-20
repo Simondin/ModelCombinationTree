@@ -1,3 +1,4 @@
+package Model;
 /**
  * Class for the mapping of the modes of a component
  * @author Simone

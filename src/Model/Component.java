@@ -1,3 +1,4 @@
+package Model;
 import java.util.ArrayList;
 
 /**
@@ -86,7 +87,7 @@ public class Component {
 	 */
 	private void setID() {
 		if(this.ID == null)
-			this.ID = Component.classID + 1;
+			this.ID = Component.classID += 1;
 	}
 	
 	/**
@@ -95,7 +96,7 @@ public class Component {
 	 * @throws Exception
 	 */
 	public void addChild(Component child) throws Exception{
-		if(!searchChild(child))
+		if(getChild(child) == null)
 			this.getChildren().add(child);
 		else
 			throw new Exception("The child with ID " + child.getID() + " already exist!");
@@ -107,9 +108,10 @@ public class Component {
 	 * @return Component
 	 */
 	public Component getChild(Component child){
-		for(Component c: this.getChildren())
-			if(c.equals(this))
+		for(Component c: this.getChildren()){
+			if(c.equals(child))
 				return c;
+		}
 		return null;
 	}
 
@@ -117,14 +119,20 @@ public class Component {
 	 * Method that search if the child is in the list of the children
 	 * @param Component child
 	 * @return boolean
-	 */
+	 *
 	public boolean searchChild(Component child){
-		boolean found = false;
-		for(Component c: this.getChildren()){
-			if(c.equals(this))
-				found = true;
-		}
-		return found;
+		for(Component c: this.getChildren())
+			if(c.equals(child))
+				return true;
+		return false;
+	}*/
+	
+	/**
+	 * Method that check if the component have or not children
+	 * @return boolean
+	 */
+	public boolean hasChildren(){
+		return this.getChildren().size() > 0;
 	}
 	
 	/**
@@ -144,8 +152,8 @@ public class Component {
 	@Override
 	public String toString(){
 		String print = "Component ID: " + this.getID();
-		for(Mode m: this.getModes())
-			print += m.toString();
+		//for(Mode m: this.getModes())
+			//print += m.toString();
 		return print;
 	}
 }
