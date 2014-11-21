@@ -98,7 +98,8 @@ public class Mode {
 	 */
 	@Override
 	public String toString(){
-		return "\n    Mode ID: " + this.getID() + "\n    Mode Value: " + this.getModeValue()+"\n";
+		return "Mode Value: " + this.getModeValue();
+		//return "\n    Mode ID: " + this.getID() + "\n    Mode Value: " + this.getModeValue()+"\n";
 	}
 	
 }

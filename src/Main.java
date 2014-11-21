@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+import Helper.HangTrasformationAlgorithm;
 import Helper.MSLTable;
 import Helper.MSLTree;
 import Model.Component;
@@ -8,14 +9,15 @@ import Model.Component;
 public class Main {
 
 	public static void main(String[] args) {
-		Component a = new Component("m1a");
-		Component b = new Component("m1b");
-		Component c = new Component("m1c");
-		Component d = new Component("m1d");
-		Component e = new Component("m1e");
-		Component f = new Component("m1f");
-		Component g = new Component("m1g");
-		Component h = new Component("m1h");
+		Component a = new Component("A","m1");
+		a.addMode("m2");
+		Component b = new Component("B","m1");
+		Component c = new Component("C","m1");
+		Component d = new Component("D","m1");
+		Component e = new Component("E","m1");
+		Component f = new Component("F","m1");
+		Component g = new Component("G","m1");
+		Component h = new Component("H","m1");
 		try {
 			a.addChild(b);
 			a.addChild(c);
@@ -39,8 +41,16 @@ public class Main {
 		nodes.add(g);
 		nodes.add(h);
 		MSLTree msl = new MSLTree();
-		msl.addNodes(nodes);
+		//msl.addNodes(nodes);
+		//System.out.print(msl.toString());
+		
+		HangTrasformationAlgorithm alg = new HangTrasformationAlgorithm();
+		alg.constructMCT(a, 0);
+		msl.addNodes(alg.getMtc_nodes());
 		System.out.print(msl.toString());
+		
+		
+		
 		//MSLTable mslTable = new MSLTable();
 		//mslTable.addComponents(nodes);
 		//System.out.println(mslTable.toString());

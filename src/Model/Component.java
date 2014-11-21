@@ -1,4 +1,5 @@
 package Model;
+import java.awt.color.CMMException;
 import java.util.ArrayList;
 
 /**
@@ -12,12 +13,16 @@ public class Component {
 	private ArrayList<Component> children;
 	private static Integer classID = 0;
 	private Integer ID;
+	private String Name;
+	private static Integer topID = 0;
+	public static String top = "TOP";
 	
 	/**
 	 * Standard Constructor: it creates a component with a deactivated mode, without children
 	 */
 	public Component(){
-		this.setID();
+		this.setID(Component.top);
+		this.setName(Component.top);
 		this.setModes(new ArrayList<Mode>());
 		this.setChildren(new ArrayList<Component>());
 		this.getModes().add(new Mode(this.getID()));
@@ -27,11 +32,20 @@ public class Component {
 	 * Specialized Constructor: it creates a component with a specific mode, without children
 	 * @param String mValues: Mode Value
 	 */
-	public Component(String mValues){
+	public Component(String name, String mValues){
 		this.setID();
+		this.setName(name);
 		this.setModes(new ArrayList<Mode>());
 		this.setChildren(new ArrayList<Component>());
 		this.getModes().add(new Mode(this.getID(),mValues));
+	}
+	
+	public Component(String name, Mode mode){
+		this.setID();
+		this.setName(name);
+		this.setModes(new ArrayList<Mode>());
+		this.setChildren(new ArrayList<Component>());
+		this.getModes().add(mode);
 	}
 	
 	/**
@@ -51,11 +65,38 @@ public class Component {
 	}
 	
 	/**
-	 * Function for add a new mode to the list of modes of the component
+	 * Set only one mode in the list
+	 * @param Mode mode
+	 */
+	public void setModes(Mode mode){
+		this.modes.clear();
+		this.modes.add(mode);
+	}
+	
+	/**
+	 * Function for add a new mode to the modes list of the component
 	 * @param Mode m
 	 */
-	public void addModes(Mode m){
+	public void addMode(Mode m){
+		m.setComponentID(this.getID());
 		this.modes.add(m);
+	}
+	
+	public String getName() {
+		return this.Name;
+	}
+
+	public void setName(String name) {
+		this.Name = name;
+	}
+	
+	
+	/**
+	 * Function for add a new mode to the modes list of the component
+	 * @param String mValue
+	 */
+	public void addMode(String mValue){
+		this.getModes().add(new Mode(this.getID(),mValue));
 	}
 
 	/**
@@ -88,6 +129,11 @@ public class Component {
 	private void setID() {
 		if(this.ID == null)
 			this.ID = Component.classID += 1;
+	}
+	
+	
+	private void setID(String top){
+		this.ID = Component.topID;
 	}
 	
 	/**
@@ -151,10 +197,25 @@ public class Component {
 	 */
 	@Override
 	public String toString(){
-		String print = "Component ID: " + this.getID()
-				;
-		//for(Mode m: this.getModes())
-			//print += m.toString();
-		return print;
+		String print = "";
+		if(this.getID().equals(Component.topID))
+			print = "Component [ " + this.getName();
+		else{
+			print = "Component [ " + this.getName()+" | ";
+			for(Mode m: this.getModes())
+				print += m.toString()+" |";
+		}
+		return print+"]";
 	}
+	
+	/**
+	 * Method that copy a Component 
+	 * @param Component c
+	 */
+	public void copyOf(Component c){
+		this.setName(c.getName());
+		this.setChildren(c.getChildren());
+		this.setModes(c.getModes());
+	}
+	
 }
