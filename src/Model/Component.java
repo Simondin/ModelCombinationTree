@@ -151,7 +151,8 @@ public class Component {
 	 */
 	@Override
 	public String toString(){
-		String print = "Component ID: " + this.getID();
+		String print = "Component ID: " + this.getID()
+				;
 		//for(Mode m: this.getModes())
 			//print += m.toString();
 		return print;

@@ -28,6 +28,7 @@ import java.util.HashMap;
  */
 public class Tree<T> {
 
+	private static final int indent = 2;
 	private T head;
 	private ArrayList<Tree<T>> leafs = new ArrayList<Tree<T>>();
 	private Tree<T> parent = null;
@@ -117,8 +118,6 @@ public class Tree<T> {
 		return printTree(0);
 	}
 
-	private static final int indent = 2;
-
 	private String printTree(int increment) {
 		String s = "";
 		String inc = "";
@@ -131,4 +130,5 @@ public class Tree<T> {
 		}
 		return s;
 	}
+	
 }

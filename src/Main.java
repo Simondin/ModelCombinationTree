@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+import Helper.MSLTable;
 import Helper.MSLTree;
 import Model.Component;
 
@@ -40,6 +41,9 @@ public class Main {
 		MSLTree msl = new MSLTree();
 		msl.addNodes(nodes);
 		System.out.print(msl.toString());
+		//MSLTable mslTable = new MSLTable();
+		//mslTable.addComponents(nodes);
+		//System.out.println(mslTable.toString());
 	}
 
 }
