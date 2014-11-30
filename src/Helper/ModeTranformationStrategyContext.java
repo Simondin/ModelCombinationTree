@@ -1,10 +1,16 @@
 package Helper;
 
+/**
+ * Context of the Algorithm Strategy Pattern.
+ * This class has the resposability to execute the requested algorithm
+ * @author francesco
+ *
+ */
 public class ModeTranformationStrategyContext {
 	
-	private ModeTrasformationAlgorithmStrategy _algorithm;
+	private ModeTransformationAlgorithmStrategy _algorithm;
 	
-	public ModeTranformationStrategyContext(ModeTrasformationAlgorithmStrategy algo){
+	public ModeTranformationStrategyContext(ModeTransformationAlgorithmStrategy algo){
 		this._algorithm = algo;
 	}
 	

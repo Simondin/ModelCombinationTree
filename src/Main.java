@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-import Helper.HangTrasformationAlgorithm;
+import Helper.HangTransformationAlgorithm;
 import Helper.MSLTable;
 import Helper.MSLTree;
 import Model.Component;
@@ -44,7 +44,7 @@ public class Main {
 		//msl.addNodes(nodes);
 		//System.out.print(msl.toString());
 		
-		HangTrasformationAlgorithm alg = new HangTrasformationAlgorithm();
+		HangTransformationAlgorithm alg = new HangTransformationAlgorithm();
 		alg.constructMCT(a, 0);
 		msl.addNodes(alg.getMtc_nodes());
 		System.out.print(msl.toString());

@@ -12,7 +12,7 @@ import Model.Mode;
  * @author francesco
  *
  */
-public class HangTrasformationAlgorithm implements ModeTrasformationAlgorithmStrategy {
+public class HangTransformationAlgorithm implements ModeTransformationAlgorithmStrategy {
 	
 	private int lampdaN;
 	private Component TOP;
@@ -32,7 +32,7 @@ public class HangTrasformationAlgorithm implements ModeTrasformationAlgorithmStr
 		}
 	}
 	
-	public HangTrasformationAlgorithm(){
+	public HangTransformationAlgorithm(){
 		this.mtc_nodes = new ArrayList<Component>();
 	}
 	
