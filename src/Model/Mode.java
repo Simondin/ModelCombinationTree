@@ -1,3 +1,4 @@
+package Model;
 /**
  * Class for the mapping of the modes of a component
  * @author Simone
@@ -78,7 +79,7 @@ public class Mode {
 	 */
 	private void setID(){
 		if(this.ID == null)
-			this.ID = Mode.classID + 1;
+			this.ID = Mode.classID += 1;
 	}
 	
 	/**
@@ -97,7 +98,8 @@ public class Mode {
 	 */
 	@Override
 	public String toString(){
-		return "\nMode ID: " + this.getID() + "\nMode Value: " + this.getModeValue();
+		return "Mode Value: " + this.getModeValue();
+		//return "\n    Mode ID: " + this.getID() + "\n    Mode Value: " + this.getModeValue()+"\n";
 	}
 	
 }
