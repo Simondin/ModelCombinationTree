@@ -2,6 +2,12 @@ package Helper;
 
 import Exception.AlgorithmException;
 
+/**
+ * Implementation of the Strategy Interface with the Hang algorithm
+ * 
+ * @author francesco
+ *
+ */
 public class HangTrasformationAlgorithm implements ModeTrasformationAlgorithmStrategy {
 
 	@Override
