@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_QyWfYHF8EeS_0vD5ROX1CQ" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_iVtBYHF8EeS_0vD5ROX1CQ" name="MultiModeComponent" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yFde0HF8EeS_0vD5ROX1CQ" name="MultiModePrimitiveComponent">
+    <generalization xmi:id="_EHx0wHF9EeS_0vD5ROX1CQ" general="_iVtBYHF8EeS_0vD5ROX1CQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yZ5dwHF8EeS_0vD5ROX1CQ" name="MultiModeCompositeComponent">
+    <generalization xmi:id="_BNyI0HF9EeS_0vD5ROX1CQ" general="_iVtBYHF8EeS_0vD5ROX1CQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_K3M6IHF9EeS_0vD5ROX1CQ" name="ModeInformationPrimitiveModel">
+    <generalization xmi:id="_XOVmMHGOEeS_0vD5ROX1CQ" general="_rVbswHGNEeS_0vD5ROX1CQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_LuHUAHF9EeS_0vD5ROX1CQ" name="Behavior"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_xoUaYHF9EeS_0vD5ROX1CQ" name="multiModeCompositeComponentsToBehaviors" memberEnd="_xoUaYXF9EeS_0vD5ROX1CQ _xov4MHF9EeS_0vD5ROX1CQ" navigableOwnedEnd="_xov4MHF9EeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_xoUaYXF9EeS_0vD5ROX1CQ" name="multiModeCompositeComponents" type="_yFde0HF8EeS_0vD5ROX1CQ" aggregation="composite" association="_xoUaYHF9EeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xovRIHF9EeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xovRIXF9EeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_xov4MHF9EeS_0vD5ROX1CQ" name="behaviors" type="_LuHUAHF9EeS_0vD5ROX1CQ" association="_xoUaYHF9EeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xpJg0HF9EeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xpJg0XF9EeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_BzzxkHF-EeS_0vD5ROX1CQ" name="multiModeCompositeComponentsToModeInformations" memberEnd="_Bz0YoHF-EeS_0vD5ROX1CQ _Bz2N0nF-EeS_0vD5ROX1CQ" navigableOwnedEnd="_Bz2N0nF-EeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_Bz0YoHF-EeS_0vD5ROX1CQ" name="multiModeCompositeComponents" type="_yFde0HF8EeS_0vD5ROX1CQ" aggregation="composite" association="_BzzxkHF-EeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Bz2N0HF-EeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Bz2N0XF-EeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Bz2N0nF-EeS_0vD5ROX1CQ" name="modeInformations" type="_K3M6IHF9EeS_0vD5ROX1CQ" association="_BzzxkHF-EeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Bz204HF-EeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Bz204XF-EeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_QQuuIHF-EeS_0vD5ROX1CQ" name="SupportedModes"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Vc54EHF-EeS_0vD5ROX1CQ" name="modeInformationsToSupportedModess" memberEnd="_Vc6fIHF-EeS_0vD5ROX1CQ _Vc9icHF-EeS_0vD5ROX1CQ" navigableOwnedEnd="_Vc9icHF-EeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_Vc6fIHF-EeS_0vD5ROX1CQ" name="modeInformations" type="_K3M6IHF9EeS_0vD5ROX1CQ" aggregation="composite" association="_Vc54EHF-EeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Vc8UUHF-EeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Vc87YHF-EeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Vc9icHF-EeS_0vD5ROX1CQ" name="supportedModess" type="_QQuuIHF-EeS_0vD5ROX1CQ" association="_Vc54EHF-EeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Vc-wkHF-EeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Vc-wkXF-EeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Mr_xMHGAEeS_0vD5ROX1CQ" name="ValidIn" memberEnd="_Mr_xMXGAEeS_0vD5ROX1CQ _MsC0gHGAEeS_0vD5ROX1CQ" navigableOwnedEnd="_MsC0gHGAEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_Mr_xMXGAEeS_0vD5ROX1CQ" name="behaviors" type="_LuHUAHF9EeS_0vD5ROX1CQ" association="_Mr_xMHGAEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MsBmYHGAEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MsCNcHGAEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_MsC0gHGAEeS_0vD5ROX1CQ" name="supportedModess" type="_QQuuIHF-EeS_0vD5ROX1CQ" association="_Mr_xMHGAEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MsFQwHGAEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MsF30HGAEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_fAHo0HGAEeS_0vD5ROX1CQ" name="Property" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hRToUHGAEeS_0vD5ROX1CQ" name="multiModeComponentsToPropertys" memberEnd="_hRToUXGAEeS_0vD5ROX1CQ _hRU2cHGAEeS_0vD5ROX1CQ" navigableOwnedEnd="_hRU2cHGAEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_hRToUXGAEeS_0vD5ROX1CQ" name="multiModeComponents" type="_iVtBYHF8EeS_0vD5ROX1CQ" aggregation="composite" association="_hRToUHGAEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hRUPYHGAEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hRUPYXGAEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_hRU2cHGAEeS_0vD5ROX1CQ" name="propertys" type="_fAHo0HGAEeS_0vD5ROX1CQ" association="_hRToUHGAEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hRVdgHGAEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hRVdgXGAEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_me35YHGAEeS_0vD5ROX1CQ" name="MDP">
+    <generalization xmi:id="_tKAkYHjCEeSYqq3v-PCIRQ" general="_fAHo0HGAEeS_0vD5ROX1CQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_mp5doHGAEeS_0vD5ROX1CQ" name="MIP">
+    <generalization xmi:id="_tyHtQHjCEeSYqq3v-PCIRQ" general="_fAHo0HGAEeS_0vD5ROX1CQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_2HvrsHGAEeS_0vD5ROX1CQ" name="ValidIn" memberEnd="_2HvrsXGAEeS_0vD5ROX1CQ _2Hw50XGAEeS_0vD5ROX1CQ" navigableOwnedEnd="_2HvrsXGAEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_2HvrsXGAEeS_0vD5ROX1CQ" name="supportedModess" type="_QQuuIHF-EeS_0vD5ROX1CQ" association="_2HvrsHGAEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2HwSwHGAEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2Hw50HGAEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_2Hw50XGAEeS_0vD5ROX1CQ" name="mDPs" type="_me35YHGAEeS_0vD5ROX1CQ" association="_2HvrsHGAEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2Hxg4HGAEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2HyH8HGAEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_LkjykHGBEeS_0vD5ROX1CQ" name="MSRM"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_idYkcHGBEeS_0vD5ROX1CQ" name="multiModeComponentsToMSRMs" memberEnd="_idYkcXGBEeS_0vD5ROX1CQ _idaZoHGBEeS_0vD5ROX1CQ" navigableOwnedEnd="_idaZoHGBEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_idYkcXGBEeS_0vD5ROX1CQ" name="multiModeComponents" type="_iVtBYHF8EeS_0vD5ROX1CQ" aggregation="composite" association="_idYkcHGBEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_idZykHGBEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_idZykXGBEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_idaZoHGBEeS_0vD5ROX1CQ" name="mSRMs" type="_LkjykHGBEeS_0vD5ROX1CQ" association="_idYkcHGBEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_idbAsHGBEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_idbnwHGBEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_qAmeQHGBEeS_0vD5ROX1CQ" name="Port" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_rWNmUHGBEeS_0vD5ROX1CQ" name="multiModeComponentsToPorts" memberEnd="_rWNmUXGBEeS_0vD5ROX1CQ _rWPbgHGBEeS_0vD5ROX1CQ" navigableOwnedEnd="_rWPbgHGBEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_rWNmUXGBEeS_0vD5ROX1CQ" name="multiModeComponents" type="_iVtBYHF8EeS_0vD5ROX1CQ" aggregation="composite" association="_rWNmUHGBEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rWONYHGBEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rWO0cHGBEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_rWPbgHGBEeS_0vD5ROX1CQ" name="ports" type="_qAmeQHGBEeS_0vD5ROX1CQ" association="_rWNmUHGBEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rWQCkHGBEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rWQCkXGBEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2YavgHGBEeS_0vD5ROX1CQ" name="DedicatedModeSwitchPort">
+    <generalization xmi:id="_WFSrkHjCEeSYqq3v-PCIRQ" general="_qAmeQHGBEeS_0vD5ROX1CQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2dqb4HGBEeS_0vD5ROX1CQ" name="FunctionalPort">
+    <generalization xmi:id="_XA9poHjCEeSYqq3v-PCIRQ" general="_qAmeQHGBEeS_0vD5ROX1CQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2g6nYHGFEeS_0vD5ROX1CQ" name="Connection"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2mfq8HGFEeS_0vD5ROX1CQ" name="SubComponent"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7Uz0MHGFEeS_0vD5ROX1CQ" name="multiModePrimitiveComponentsToConnections" memberEnd="_7U0bQHGFEeS_0vD5ROX1CQ _7U3ekHGFEeS_0vD5ROX1CQ" navigableOwnedEnd="_7U3ekHGFEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_7U0bQHGFEeS_0vD5ROX1CQ" name="multiModePrimitiveComponents" type="_yZ5dwHF8EeS_0vD5ROX1CQ" aggregation="composite" association="_7Uz0MHGFEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7U2QcHGFEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7U23gHGFEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_7U3ekHGFEeS_0vD5ROX1CQ" name="connections" type="_2g6nYHGFEeS_0vD5ROX1CQ" association="_7Uz0MHGFEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7U4FoHGFEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7U4FoXGFEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7wfDkHGFEeS_0vD5ROX1CQ" name="multiModePrimitiveComponentsToSubComponents" memberEnd="_7wfqoHGFEeS_0vD5ROX1CQ _7wj8EHGFEeS_0vD5ROX1CQ" navigableOwnedEnd="_7wj8EHGFEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_7wfqoHGFEeS_0vD5ROX1CQ" name="multiModePrimitiveComponents" type="_yZ5dwHF8EeS_0vD5ROX1CQ" aggregation="composite" association="_7wfDkHGFEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7wit8HGFEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7wjVAHGFEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_7wj8EHGFEeS_0vD5ROX1CQ" name="subComponents" type="_2mfq8HGFEeS_0vD5ROX1CQ" association="_7wfDkHGFEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7wkjIHGFEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7wlKMHGFEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Hi13UHGGEeS_0vD5ROX1CQ" name="instanceOf" memberEnd="_Hi2eYHGGEeS_0vD5ROX1CQ _Hi3FcXGGEeS_0vD5ROX1CQ" navigableOwnedEnd="_Hi3FcXGGEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_Hi2eYHGGEeS_0vD5ROX1CQ" name="subComponents" type="_2mfq8HGFEeS_0vD5ROX1CQ" association="_Hi13UHGGEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hi2eYXGGEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Hi3FcHGGEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Hi3FcXGGEeS_0vD5ROX1CQ" name="multiModeComponents" type="_iVtBYHF8EeS_0vD5ROX1CQ" association="_Hi13UHGGEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hi3sgHGGEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Hi3sgXGGEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_gIMccHGGEeS_0vD5ROX1CQ" name="functionalPortsToConnections" memberEnd="_gIMccXGGEeS_0vD5ROX1CQ _gIO4sHGGEeS_0vD5ROX1CQ" navigableOwnedEnd="_gIMccXGGEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_gIMccXGGEeS_0vD5ROX1CQ" name="functionalPorts" type="_2dqb4HGBEeS_0vD5ROX1CQ" association="_gIMccHGGEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gINqkHGGEeS_0vD5ROX1CQ" value="2"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gIORoHGGEeS_0vD5ROX1CQ" value="2"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_gIO4sHGGEeS_0vD5ROX1CQ" name="connections" type="_2g6nYHGFEeS_0vD5ROX1CQ" association="_gIMccHGGEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gIQG0HGGEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gIQt4HGGEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y5sMkHGGEeS_0vD5ROX1CQ" name="Activated" memberEnd="_y5sMkXGGEeS_0vD5ROX1CQ _y5tasHGGEeS_0vD5ROX1CQ" navigableOwnedEnd="_y5tasHGGEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_y5sMkXGGEeS_0vD5ROX1CQ" name="supportedModess" type="_QQuuIHF-EeS_0vD5ROX1CQ" association="_y5sMkHGGEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y5szoHGGEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y5szoXGGEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y5tasHGGEeS_0vD5ROX1CQ" name="subComponents" type="_2mfq8HGFEeS_0vD5ROX1CQ" association="_y5sMkHGGEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y5tasXGGEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y5uBwHGGEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_iXeiAHGHEeS_0vD5ROX1CQ" name="connectionsToSupportedModess" memberEnd="_iXfJEHGHEeS_0vD5ROX1CQ _iXfwInGHEeS_0vD5ROX1CQ" navigableOwnedEnd="_iXfJEHGHEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_iXfJEHGHEeS_0vD5ROX1CQ" name="connections" type="_2g6nYHGFEeS_0vD5ROX1CQ" association="_iXeiAHGHEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iXfwIHGHEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iXfwIXGHEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_iXfwInGHEeS_0vD5ROX1CQ" name="supportedModess" type="_QQuuIHF-EeS_0vD5ROX1CQ" association="_iXeiAHGHEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iXgXMHGHEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iXgXMXGHEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_02TNwHGHEeS_0vD5ROX1CQ" name="ValidIn" visibility="package" memberEnd="_02T00HGHEeS_0vD5ROX1CQ _02W4IHGHEeS_0vD5ROX1CQ" navigableOwnedEnd="_02W4IHGHEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_02T00HGHEeS_0vD5ROX1CQ" name="mIPs" type="_mp5doHGAEeS_0vD5ROX1CQ" association="_02TNwHGHEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_02VqAHGHEeS_0vD5ROX1CQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_02WREHGHEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_02W4IHGHEeS_0vD5ROX1CQ" name="supportedModess" type="_QQuuIHF-EeS_0vD5ROX1CQ" association="_02TNwHGHEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_02YGQHGHEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_02YtUHGHEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tWB9cHGLEeS_0vD5ROX1CQ" name="ModeInformationCompositeModel">
+    <generalization xmi:id="_c1cYoHGOEeS_0vD5ROX1CQ" general="_rVbswHGNEeS_0vD5ROX1CQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HNj8IHGMEeS_0vD5ROX1CQ" name="multiModeCompositeComponentsToModeInformationCompositeModels" memberEnd="_HNj8IXGMEeS_0vD5ROX1CQ _HNmYYHGMEeS_0vD5ROX1CQ" navigableOwnedEnd="_HNmYYHGMEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_HNj8IXGMEeS_0vD5ROX1CQ" name="multiModeCompositeComponents" type="_yZ5dwHF8EeS_0vD5ROX1CQ" aggregation="composite" association="_HNj8IHGMEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HNlxUHGMEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HNlxUXGMEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_HNmYYHGMEeS_0vD5ROX1CQ" name="modeInformationCompositeModels" type="_tWB9cHGLEeS_0vD5ROX1CQ" association="_HNj8IHGMEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HNoNkHGMEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HNoNkXGMEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Rc2aoHGMEeS_0vD5ROX1CQ" name="ModeMapping"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VLSbQHGMEeS_0vD5ROX1CQ" name="modeInformationCompositeModelsToModeMappings" memberEnd="_VLTCUHGMEeS_0vD5ROX1CQ _VLUQcHGMEeS_0vD5ROX1CQ" navigableOwnedEnd="_VLUQcHGMEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_VLTCUHGMEeS_0vD5ROX1CQ" name="modeInformationCompositeModels" type="_tWB9cHGLEeS_0vD5ROX1CQ" aggregation="composite" association="_VLSbQHGMEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VLTpYHGMEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VLTpYXGMEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_VLUQcHGMEeS_0vD5ROX1CQ" name="modeMappings" type="_Rc2aoHGMEeS_0vD5ROX1CQ" association="_VLSbQHGMEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VLUQcXGMEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VLU3gHGMEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_OXxDkHGNEeS_0vD5ROX1CQ" name="modeInformationCompositeModelsToSupportedModess" memberEnd="_OXxqoHGNEeS_0vD5ROX1CQ _OX0G4HGNEeS_0vD5ROX1CQ" navigableOwnedEnd="_OX0G4HGNEeS_0vD5ROX1CQ">
+    <ownedEnd xmi:id="_OXxqoHGNEeS_0vD5ROX1CQ" name="modeInformationCompositeModels" type="_tWB9cHGLEeS_0vD5ROX1CQ" aggregation="composite" association="_OXxDkHGNEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OXzf0HGNEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OXzf0XGNEeS_0vD5ROX1CQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_OX0G4HGNEeS_0vD5ROX1CQ" name="supportedModess" type="_QQuuIHF-EeS_0vD5ROX1CQ" association="_OXxDkHGNEeS_0vD5ROX1CQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OX1VAHGNEeS_0vD5ROX1CQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OX18EHGNEeS_0vD5ROX1CQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rVbswHGNEeS_0vD5ROX1CQ" name="ModeInformation" isAbstract="true"/>
+</uml:Model>
