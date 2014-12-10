@@ -1,4 +1,4 @@
-package Helper;
+package helper;
 
 /*
  * Copyright 2007 Google Inc.

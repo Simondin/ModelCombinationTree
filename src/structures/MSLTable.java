@@ -1,10 +1,10 @@
-package Structures;
+package structures;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
-import Model.Component;
-import Model.Mode;
+import model.Component;
+import model.Mode;
 
 public class MSLTable {
 

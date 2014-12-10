@@ -1,5 +1,4 @@
-package Model;
-import java.awt.color.CMMException;
+package model;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +17,7 @@ public class Component {
 	public static String top = "TOP";
 	
 	/**
-	 * Standard Constructor: it creates a component with a deactivated mode, without children
+	 * Standard Constructor: it creates a TOP component with a deactivated mode, without children
 	 */
 	public Component(){
 		this.setID(Component.top);
@@ -26,6 +25,17 @@ public class Component {
 		this.setModes(new ArrayList<Mode>());
 		this.setChildren(new ArrayList<Component>());
 		this.getModes().add(new Mode(this.getID()));
+	}
+	
+	/**
+	 * Standard Constructor: it creates a component with a deactivated mode, without children
+	 */
+	public Component(String name){
+		this.setID();
+		this.setName(name);
+		this.setModes(new ArrayList<Mode>());
+		this.setChildren(new ArrayList<Component>());
+		this.getModes().add(new Mode(this.getID(),Mode.deactivated+name));
 	}
 
 	/**
@@ -37,7 +47,7 @@ public class Component {
 		this.setName(name);
 		this.setModes(new ArrayList<Mode>());
 		this.setChildren(new ArrayList<Component>());
-		this.getModes().add(new Mode(this.getID(),mValues));
+		this.getModes().add(new Mode(this.getID(),mValues+name));
 	}
 	
 	public Component(String name, Mode mode){
@@ -46,6 +56,11 @@ public class Component {
 		this.setModes(new ArrayList<Mode>());
 		this.setChildren(new ArrayList<Component>());
 		this.getModes().add(mode);
+	}
+	
+	public Component(Component c, Mode mode){
+		this.fullCopy(c);
+		this.setMode(mode);
 	}
 	
 	/**
@@ -68,8 +83,9 @@ public class Component {
 	 * Set only one mode in the list
 	 * @param Mode mode
 	 */
-	public void setModes(Mode mode){
-		this.modes.clear();
+	public void setMode(Mode mode){
+		if(!this.modes.isEmpty())
+			this.modes.clear();
 		this.modes.add(mode);
 	}
 	
@@ -78,8 +94,12 @@ public class Component {
 	 * @param Mode m
 	 */
 	public void addMode(Mode m){
-		m.setComponentID(this.getID());
-		this.modes.add(m);
+		if(m == null)
+			this.modes.add(new Mode(this.getID(),Mode.deactivated+this.getName()));
+		else {
+			m.setComponentID(this.getID());
+			this.modes.add(m);
+		}
 	}
 	
 	public String getName() {
@@ -96,7 +116,7 @@ public class Component {
 	 * @param String mValue
 	 */
 	public void addMode(String mValue){
-		this.getModes().add(new Mode(this.getID(),mValue));
+		this.getModes().add(new Mode(this.getID(),mValue+this.getName()));
 	}
 
 	/**
@@ -129,6 +149,14 @@ public class Component {
 	private void setID() {
 		if(this.ID == null)
 			this.ID = Component.classID += 1;
+	}
+	
+	/**
+	 * Used only for the copies
+	 * @param ID integer
+	 */
+	private void setID(int ID){
+		this.ID = ID;
 	}
 	
 	
@@ -199,13 +227,13 @@ public class Component {
 	public String toString(){
 		String print = "";
 		if(this.getID().equals(Component.topID))
-			print = "Component [ " + this.getName();
+			print = "( " + this.getName();
 		else{
-			print = "Component [ " + this.getName()+" | ";
+			print = "( " + this.getName()+" | ";
 			for(Mode m: this.getModes())
 				print += m.toString()+" |";
 		}
-		return print+"]";
+		return print+" )";
 	}
 	
 	/**
@@ -217,5 +245,25 @@ public class Component {
 		this.setChildren(c.getChildren());
 		this.setModes(c.getModes());
 	}
+	
+	public void fullCopy(Component c){
+		this.setName(c.getName());
+		this.setChildren(c.getChildren());
+		this.setID(c.getID());
+		this.setModes(new ArrayList<Mode>());
+	}
+	
+	public void deactivateModes(){
+		for(Mode m : this.getModes())
+			m.deactivateMode(this.Name);
+	}
+	
+	public boolean hasDeactivatedModes(){
+		for(Mode m : this.getModes())
+			if(m.isDeactivated())
+				return true;
+		return false;
+	}
+	
 	
 }

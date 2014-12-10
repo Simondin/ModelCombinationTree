@@ -1,4 +1,4 @@
-package Helper;
+package helper;
 
 /**
  * Context of the Algorithm Strategy Pattern.
@@ -14,7 +14,7 @@ public class ModeTranformationStrategyContext {
 		this._algorithm = algo;
 	}
 	
-	public void executeAlgorithm(){
-		this._algorithm.execute();
+	public void executeAlgorithm(Object arg1, Object arg2){
+		this._algorithm.execute(arg1,arg2);
 	}
 }

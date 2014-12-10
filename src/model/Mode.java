@@ -1,4 +1,4 @@
-package Model;
+package model;
 /**
  * Class for the mapping of the modes of a component
  * @author Simone
@@ -9,7 +9,7 @@ public class Mode {
 	private static Integer classID = 0;
 	private Integer ID;
 	private Integer componentID;
-	private final static String deactivated = "D";
+	public final static String deactivated = "deactivated";
 	private String modeValue;
 	
 	/**
@@ -31,6 +31,10 @@ public class Mode {
 		this.setID();
 		this.setComponentID(cID);
 		this.setModeValue(mValue);
+	}
+	
+	public Mode(Mode m){
+		this.copyOf(m);
 	}
 	
 	/**
@@ -82,6 +86,10 @@ public class Mode {
 			this.ID = Mode.classID += 1;
 	}
 	
+	private void setID(Integer id){
+		this.ID = id;
+	}
+	
 	/**
 	 * Override of the "equals" method, it checks the ID of two modes
 	 * @param Component c
@@ -98,8 +106,24 @@ public class Mode {
 	 */
 	@Override
 	public String toString(){
-		return "Mode Value: " + this.getModeValue();
+		return this.getModeValue();
+		//return "Mode Value: " + this.getModeValue();
 		//return "\n    Mode ID: " + this.getID() + "\n    Mode Value: " + this.getModeValue()+"\n";
 	}
+	
+	public boolean isDeactivated(){
+		return this.modeValue.contains("deactivated");
+	}
+	
+	public void deactivateMode(String name){
+		this.modeValue = Mode.deactivated+name;
+	}
+	
+	public void copyOf(Mode m){
+		this.setID(m.getID());
+		this.setComponentID(m.getID());
+		this.setModeValue(m.getModeValue());
+	}
+	
 	
 }

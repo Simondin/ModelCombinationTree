@@ -1,11 +1,11 @@
 /**
  * 
  */
-package Helper;
+package helper;
 
 import java.util.ArrayList;
 
-import Model.Component;
+import model.Component;
 
 /**
  * Class to map the component in the tree structure

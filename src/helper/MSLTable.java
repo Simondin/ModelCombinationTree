@@ -1,10 +1,10 @@
-package Helper;
+package helper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import Model.Component;
-import Model.Mode;
+import model.Component;
+import model.Mode;
 
 public class MSLTable {
 	
