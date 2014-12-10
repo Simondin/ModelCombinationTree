@@ -5,6 +5,7 @@ package exception;
  * @author francesco
  *
  */
+@SuppressWarnings("serial")
 public class AlgorithmException extends Exception {
 	
 }

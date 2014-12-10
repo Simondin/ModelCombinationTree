@@ -3,7 +3,6 @@ package helper;
 import java.util.ArrayList;
 
 import controller.ComponentManager;
-import exception.AlgorithmException;
 import structures.MSLTable;
 import structures.Tree;
 import model.Component;

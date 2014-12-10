@@ -1,6 +1,5 @@
 import helper.HangTrasformationAlgorithm;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import controller.ComponentManager;
@@ -40,7 +39,6 @@ public class Main {
 			d.addChild(g);
 			d.addChild(h);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
