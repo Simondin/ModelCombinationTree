@@ -17,4 +17,13 @@ public class ModeTranformationStrategyContext {
 	public void executeAlgorithm(Object arg1, Object arg2){
 		this._algorithm.execute(arg1,arg2);
 	}
+	
+	@Override
+	public String toString(){
+		return this._algorithm.printTree();
+	}
+	
+	public void printPaths(){
+		System.out.println(this._algorithm.printPaths());
+	}
 }

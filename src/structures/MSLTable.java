@@ -92,13 +92,35 @@ public class MSLTable {
 		mode_d.add(tree_d2);
 
 		/*******************************/
+		ArrayList<ArrayList<Mode>> mode_g = new ArrayList<ArrayList<Mode>>();
+		
+		ArrayList<Mode> tree_g1 = new ArrayList<Mode>();
+		tree_g1.add(modes.get(30));
+		tree_g1.add(modes.get(31));
+		tree_g1.add(modes.get(32));
+
+		ArrayList<Mode> tree_g2 = new ArrayList<Mode>();
+		tree_g2.add(modes.get(33));
+		tree_g2.add(modes.get(34));
+		tree_g2.add(modes.get(35));
+		
+		ArrayList<Mode> tree_g3 = new ArrayList<Mode>();
+		tree_g3.add(modes.get(36));
+		tree_g3.add(modes.get(37));
+		tree_g3.add(modes.get(38));
+		
+		mode_g.add(tree_g1);
+		mode_g.add(tree_g2);
+		mode_g.add(tree_g3);
+		
 		this.linked_modes.put(components.get(0), mode_a);
 		this.linked_modes.put(components.get(1), mode_c);
 		this.linked_modes.put(components.get(2), mode_d);
+		this.linked_modes.put(components.get(3), mode_g);
 	}
 
 	public String toString() {
-		String string = "";
+		String string = "\n";
 		for (Component c : this.getLinked_modes().keySet()) {
 			string += c.toString() + "\n";
 			for (ArrayList<Mode> t : this.getLinked_modes().get(c))

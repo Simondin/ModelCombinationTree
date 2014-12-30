@@ -1,4 +1,5 @@
 import helper.HangTrasformationAlgorithm;
+import helper.ModeTranformationStrategyContext;
 
 import java.util.ArrayList;
 
@@ -30,6 +31,12 @@ public class Main {
 		g.addMode("m2");
 		Component h = new Component("H","m1");
 		h.addMode("m2");
+		Component i = new Component("I","m1");
+		i.addMode("m2");
+		i.addMode((Mode)null);
+		Component l = new Component("L","m1");
+		l.addMode("m2");
+		l.addMode((Mode)null);
 		try {
 			a.addChild(b);
 			a.addChild(c);
@@ -38,6 +45,8 @@ public class Main {
 			c.addChild(f);
 			d.addChild(g);
 			d.addChild(h);
+			g.addChild(i);
+			g.addChild(l);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -51,17 +60,20 @@ public class Main {
 		nodes.add(f);
 		nodes.add(g);
 		nodes.add(h);
+		nodes.add(i);
+		nodes.add(l);
 		ComponentManager componentManager = ComponentManager.getInstance();
 		componentManager.addComponents(nodes);
 		MSLTree msl = new MSLTree();
 		msl.addNodes(nodes);
-		//System.out.print(msl.toString());
+		System.out.print(msl.toString());
 		
 		
 		ArrayList<Component> components = new ArrayList<Component>();
 		components.add(a);
 		components.add(c);
 		components.add(d);
+		components.add(g);
 		
 		ArrayList<Mode> modes = new ArrayList<Mode>();
 		//Componente A
@@ -106,20 +118,36 @@ public class Main {
 		modes.add(g.getModes().get(1));
 		modes.add(h.getModes().get(1));
 		
+		//Componente G
+		modes.add(g.getModes().get(0));
+		modes.add(i.getModes().get(2));
+		modes.add(l.getModes().get(0));
+		
+		modes.add(g.getModes().get(0));
+		modes.add(i.getModes().get(1));
+		modes.add(l.getModes().get(1));
+		
+		modes.add(g.getModes().get(1));
+		modes.add(i.getModes().get(0));
+		modes.add(l.getModes().get(2));
+		
 		MSLTable mslTable = new MSLTable();
 		//System.out.println(modes.subList(0, 12));
 		//System.out.println(modes.subList(12, 24));
 		//System.out.println(modes.subList(24, 30));
 		mslTable.addModes(components, modes);
+		System.out.println(mslTable);
+		
 		
 		HangTrasformationAlgorithm alg = new HangTrasformationAlgorithm(mslTable);
+		ModeTranformationStrategyContext modeTransformation = new ModeTranformationStrategyContext(alg);
 		ArrayList<Component> A = new ArrayList<Component>();
 		A.add(a);
 		//alg.constructMCT(A, 0);
-		alg.execute(A, 0);
+		modeTransformation.executeAlgorithm(A, 0);
 		
-		alg.printTree();
-		//alg.printPaths();
+		System.out.print(modeTransformation);
+		modeTransformation.printPaths();
 		
 	}
 

@@ -36,7 +36,7 @@ public class HangTrasformationAlgorithm implements
 		long startTime = System.nanoTime();
 		this.constructMCT((ArrayList<Component>) components,(int) depthN);
 		long endTime = System.nanoTime();
-		System.out.println("Execution Time: " + ((endTime - startTime) / 1000000) + " ms" );
+		System.out.println("Execution Time: " + ((endTime - startTime) / 1000) + " micro s" );
 	}
 	
 	public Component getTOP() {
@@ -253,11 +253,13 @@ public class HangTrasformationAlgorithm implements
 		return string;
 	}
 	
-	public void printPaths(){
-		System.out.println(this.getPaths());
+	@Override
+	public String printPaths(){
+		return this.getPaths().toString();
 	}
 	
-	public void printTree(){
-		System.out.println(this.getTree());
+	@Override
+	public String printTree(){
+		return this.getTree().toString();
 	}
 }
